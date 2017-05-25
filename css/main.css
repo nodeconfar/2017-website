@@ -7668,6 +7668,13 @@ section {
     background-attachment: fixed;
     background-image: url(../assets/images/header.png);
     background-position: 50%;
+    background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+    #home {
+        background-size: 100%;
+    }
 }
 
 .back-home {
@@ -7743,8 +7750,8 @@ section {
 .hexagon {
     position: relative;
     margin: 70px auto;
-    width: 190px;
-    height: 110px;
+    width: 180px;
+    height: 105px;
     background-position: center center;
     background-size: 220px;
     z-index: 1;
