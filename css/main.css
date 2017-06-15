@@ -7901,6 +7901,10 @@ section {
     background-size: cover;
 }
 
+.profile-speaker  {
+    max-width: 400px;
+}
+
 @media screen and (max-width: 600px) {
     .trama {
         background-size: 100%;
