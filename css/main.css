@@ -7832,6 +7832,10 @@ section {
     display: block;
 }
 
+h2 {
+    font-weight: normal;
+}
+
 .no-js #loader {
     display: none;
 }
@@ -7851,6 +7855,17 @@ section {
     height: 100%;
     z-index: 9999;
     background: #fff url(../assets/images/preloader.gif) center no-repeat;
+}
+
+.middle-logo {
+    height: calc(100vh - 100px);
+    display: table;
+    width: 100%;
+}
+
+.icon-tickets {
+    width: 120px;
+    margin: 0 auto;
 }
 
 #toggle-menu {
@@ -8008,6 +8023,12 @@ section {
     height: auto;
 }
 
+.lines-tickets {
+    background: url(../assets/images/lines-tickets.png) repeat-x top;
+    width: 100%;
+    height: auto;
+}
+
 .hexagon {
     position: relative;
     margin: 70px auto;
@@ -8018,10 +8039,6 @@ section {
     z-index: 1;
     line-height: 110px;
     text-align: center;
-    font-size: 20px;
-    letter-spacing: 2px;
-    color: #bade09;
-    text-transform: uppercase;
 }
 
 .hexagon .hexa-out,
@@ -8385,12 +8402,8 @@ section {
 }
 
 .btn-scroll-down {
-    width: 100;
+    width: 100px;
     height: 35px;
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
     margin: auto;
     z-index: 10;
     transition: display 0.5s easy-in-out;
