@@ -8172,7 +8172,7 @@ h2 {
 
 .modal-content {
     padding: 30px;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 600px;
     text-align: center;
 }
