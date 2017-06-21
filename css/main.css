@@ -7812,6 +7812,7 @@ font-size: 0.75rem;
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 [data-aload] {
@@ -8114,6 +8115,165 @@ h2 {
     opacity: 1;
     transform: translateX(0);
     transition-delay: 0.4s;
+}
+
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(187, 220, 47, 0.8);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none !important;
+    display: none;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto !important;
+    display: block;
+}
+
+.modalDialog > div {
+    max-width: 700px;
+    margin: 10% auto;
+    position: relative;
+    background: #1a2024;
+    color: white;
+    transition: transform 400ms ease-in;
+    border-radius: 3px;
+}
+
+.title-modal {
+    background-color: #000;
+    height: 65px;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 0 2%;
+    color: white;
+    text-transform: uppercase;
+}
+
+.title-modal a {
+    color: white;
+}
+
+.title-modal ul li {
+    list-style: none;
+}
+
+.modal-content {
+    padding: 30px;
+    overflow-y: scroll;
+    max-height: 600px;
+    text-align: center;
+}
+
+.close span {
+    line-height: 25px;
+    width: 25px;
+    height: 25px;
+    border: solid 2px;
+    border-radius: 25px;
+    margin-left: 10px;
+    display: inline-block;
+    text-align: center;
+    background-color: #1a2024;
+}
+
+.close p {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.tito-ticket-name {
+    font-size: 21px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+.tito-submit {
+    transition: color 0.15s ease-in;
+    transition: background-color 0.2s ease-in-out;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.25rem;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.5rem 4rem;
+    text-align: center;
+    background-color: #f8cf1c;
+    border-radius: 50px;
+}
+
+.tito-ticket-name {
+    display: none;
+}
+
+.tito-ticket-quantity-field {
+    color: #1a2024;
+    padding: 8px;
+    margin-left: 8px;
+}
+
+.tito-ticket-description {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0 30px;
+}
+
+.tito-ticket {
+    margin: 0;
+}
+
+.tito-ticket-price-quantity {
+    margin: 20px 0;
+}
+
+.tito-ticket-price {
+    font-size: 36px;
+}
+
+.tito-ticket-vat {
+    font-size: 12px;
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+.tito-ticket-price,
+.tito-ticket-quantity {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+
+.tito-badge-link {
+    display: none;
+}
+
+.tito-submit:hover {
+    background-color: #bbdc2f;
+}
+
+.tito-ticket-list {
+    margin-bottom: 0;
+}
+
+.tito-tickets-unavailable p:first-child {
+    margin-top: 0;
+}
+
+.tito-tickets-unavailable p:last-child {
+    margin-bottom: 0;
 }
 
 #fotos-owl {
