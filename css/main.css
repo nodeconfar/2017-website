@@ -8157,7 +8157,7 @@ h2 {
         justify-content: space-between;
     -ms-flex-align: center;
         align-items: center;
-    padding: 0 2%;
+    padding: 0 25px;
     color: white;
     text-transform: uppercase;
 }
@@ -8223,6 +8223,11 @@ h2 {
     color: #1a2024;
     padding: 8px;
     margin-left: 8px;
+}
+
+.tito-tickets-unavailable a {
+    color: #f8cf1c;
+    text-decoration: none;
 }
 
 .tito-ticket-description {
