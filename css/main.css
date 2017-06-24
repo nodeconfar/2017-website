@@ -8014,8 +8014,12 @@ h2 {
 }
 
 .sponsors-logos .media-partners li {
-    max-width: 120px;
-    padding: 5px 5px 0;
+    max-height: 50px;
+    background: transparent;
+}
+
+.sponsors-logos .media-partners li img {
+    max-height: 50px;
 }
 
 .lines {
@@ -8157,7 +8161,7 @@ h2 {
         justify-content: space-between;
     -ms-flex-align: center;
         align-items: center;
-    padding: 0 2%;
+    padding: 0 25px;
     color: white;
     text-transform: uppercase;
 }
@@ -8213,6 +8217,7 @@ h2 {
     text-align: center;
     background-color: #f8cf1c;
     border-radius: 50px;
+    font-family: 'Abel', sans-serif;
 }
 
 .tito-ticket-name {
@@ -8223,6 +8228,11 @@ h2 {
     color: #1a2024;
     padding: 8px;
     margin-left: 8px;
+}
+
+.tito-tickets-unavailable a {
+    color: #f8cf1c;
+    text-decoration: none;
 }
 
 .tito-ticket-description {
