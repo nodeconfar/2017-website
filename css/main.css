@@ -7833,7 +7833,7 @@ section {
     display: block;
 }
 
-h2 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
@@ -8228,6 +8228,12 @@ h2 {
     color: #1a2024;
     padding: 8px;
     margin-left: 8px;
+}
+
+.tito-ticket-status-sold-out {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0 0 20px;
 }
 
 .tito-tickets-unavailable a {
