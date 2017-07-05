@@ -7921,16 +7921,6 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 400px;
 }
 
-@media screen and (max-width: 40em) {
-    .trama {
-        background-size: 100%;
-    }
-
-    .profile-speaker {
-        width: 100%;
-    }
-}
-
 .back-home {
     background: url(../assets/images/back-home.svg);
     width: 35px;
@@ -8176,7 +8166,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-content {
     padding: 30px;
-    overflow-y: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
     max-height: 600px;
     text-align: center;
 }
@@ -8228,6 +8219,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #1a2024;
     padding: 8px;
     margin-left: 8px;
+    font-size: 30px;
+    max-width: 100px;
 }
 
 .tito-ticket-status-sold-out {
@@ -8315,6 +8308,28 @@ h1, h2, h3, h4, h5, h6 {
     height: 70%;
     width: 70%;
     overflow: hidden;
+}
+
+@media screen and (max-width: 40em) {
+    .trama {
+        background-size: 100%;
+    }
+
+    .profile-speaker {
+        width: 100%;
+    }
+
+    .modalDialog > div {
+        margin: 0 auto;
+    }
+
+    .modal-content {
+        padding: 20px 10px;
+    }
+
+    .tito-ticket-description {
+        font-size: 15px;
+    }
 }
 
 @keyframes down {
