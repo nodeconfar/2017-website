@@ -121,7 +121,8 @@ $("#toggle-menu").click(function(){
     $("#menu").toggleClass("dn");
 });
 $("#menu li a").click(function(){
-    $("#menu").toggleClass("dn");
+    $("#menu").addClass("dn");
+    $("#toggle-menu").removeClass("menu-opened");
   });
 
 //animacion
