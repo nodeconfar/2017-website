@@ -122,6 +122,7 @@ $("#toggle-menu").click(function(){
 });
 $("#menu li a").click(function(){
     $("#menu").toggleClass("dn");
+    $("#toggle-menu").toggleClass("menu-opened");
   });
 
 //animacion
@@ -302,11 +303,24 @@ function init() {
   // Create the Google Map using our element and options defined above
   var map = new google.maps.Map(mapElement, mapOptions);
 
-  // Let's also add a marker while we're at it
-  var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(-34.606596, -58.41068),
+var infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+
+        service.getDetails({
+          placeId: 'ChIJVZ5P43e1vJUR2WezLAkj2G0'
+        }, function(place, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(-34.606596, -58.41068),
     map: map,
     title: 'Konex',
     icon: 'assets/images/back-home.svg'
-  });
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent('<div class="f5"><strong class="f4">' + place.name + '</strong><br>' +
+                place.formatted_address + '</div>');
+              infowindow.open(map, this);
+            });
+          }
+        });
 }
