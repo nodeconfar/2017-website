@@ -7877,6 +7877,11 @@ h6 {
     margin: 0 auto;
 }
 
+.buy .icon-tickets {
+    width: 140px;
+    margin: 0 auto;
+}
+
 #toggle-menu {
     height: 46px;
 }
@@ -8039,6 +8044,16 @@ h6 {
     height: 105px;
     background-position: center center;
     background-size: 220px;
+    z-index: 1;
+    line-height: 110px;
+    text-align: center;
+}
+
+.hexagon.buy {
+    position: relative;
+    margin: 60px auto;
+    width: 210px;
+    height: 121px;
     z-index: 1;
     line-height: 110px;
     text-align: center;
