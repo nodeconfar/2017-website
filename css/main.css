@@ -8059,6 +8059,13 @@ h6 {
     text-align: center;
 }
 
+.hexagon.buy,
+.hexagon.buy .hexa-out,
+.hexagon.buy .hexa-in {
+    border-left: dashed 1px #1a2024;
+    border-right: dashed 1px #1a2024;
+}
+
 .hexagon .hexa-out,
 .hexagon .hexa-in {
     position: absolute;
