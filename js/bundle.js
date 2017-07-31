@@ -47,6 +47,7 @@ $('a[href*="#"]')
     // Remove links that don't actually link to anything
     .not('[href="#"]')
     .not('[href="#0"]')
+    .not('[href="#buy-ticket"]')
     .click(function (event) {
         // On-page links
         if (
@@ -82,7 +83,7 @@ $('a[href*="#"]')
 // Cache selectors
 var lastId,
     topMenu = $("#top-menu"),
-    topMenuHeight = topMenu.outerHeight()+15,
+    topMenuHeight = topMenu.outerHeight()-1,
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
