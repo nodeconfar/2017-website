@@ -1068,7 +1068,7 @@ h4 {
 }
 .modalDialog > div {
     max-width: 700px;
-    margin: 10% auto;
+    margin: 64px auto;
     position: relative;
     background: #1a2024;
     color: white;
@@ -1498,7 +1498,7 @@ h4 {
 }
 .b-ticket::before {
     animation: bounce 1s infinite alternate;
-    content: '';
+    content: 'get your tickets!';
     display: block;
     padding-bottom: 2rem;
 }
