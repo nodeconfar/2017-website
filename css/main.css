@@ -275,6 +275,9 @@ img {
 .bottom-1 {
 	bottom: 1rem;
 }
+.top--1 {
+	top: -1rem;
+}
 .right--1 {
 	right: -1rem;
 }
@@ -350,6 +353,9 @@ img {
 }
 .fl {
 	_display: inline;
+}
+.h2 {
+	height: 2rem;
 }
 .h3 {
 	height: 4rem;
@@ -543,6 +549,10 @@ img {
 	padding-top: 4rem;
 	padding-bottom: 4rem;
 }
+.pv6 {
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+}
 .ph0 {
 	padding-left: 0;
 	padding-right: 0;
@@ -671,7 +681,7 @@ img {
 .z-999 {
 	z-index: 999;
 }
-@media screen and (min-width:40em) {
+@media screen and (min-width:45em) {
 	.left-2-ns {
 		left: 2rem;
 	}
@@ -747,6 +757,10 @@ img {
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
+	.ph5-ns {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
 	.ml3-ns {
 		margin-left: 1rem;
 	}
@@ -758,7 +772,7 @@ img {
 		font-size: 2.25rem;
 	}
 	article .f2-ns {
-		font-size: 2.1rem;
+		font-size: 2.3vw;
 	}
 	.f3-ns {
 		font-size: 1.5rem;
@@ -766,10 +780,32 @@ img {
 	.f4-ns {
 		font-size: 1.25rem;
 	}
+	article .f4-ns {
+		font-size: 1.75vw;
+	}
+}
+@media screen and (min-width:45em) and (max-width: 60em) {
+	.pl5-ms {
+		padding-left: 4rem;
+	}
+}
+@media screen and (max-width: 45em) {
+	.w-third-m {
+		width: 100%!important;
+	}
 }
 @media screen and (max-width:60em) {
 	.dn-m {
 		display: none;
+	}
+	.w-third-m {
+		width: 33.33333%;
+	}
+	.pa3-m {
+		padding: 1rem;
+	}
+	article	.pa3-m {
+		padding: 1rem;
 	}
 }
 @media screen and (min-width:60em) {
