@@ -705,9 +705,6 @@ img {
 	.fl-ns {
 		display: inline;
 	}
-	.vh-100-ns {
-		height: 100vh;
-	}
 	.w-20-ns {
 		width: 20%;
 	}
@@ -716,9 +713,6 @@ img {
 	}
 	.w-50-ns {
 		width: 50%;
-	}
-	.fixed-ns {
-		position: fixed;
 	}
 	.pa4-ns {
 		padding: 2rem;
@@ -781,7 +775,7 @@ img {
 		font-size: 1.25rem;
 	}
 	article .f4-ns {
-		font-size: 1.75vw;
+		font-size: 1.3vw;
 	}
 }
 @media screen and (min-width:45em) and (max-width: 60em) {
