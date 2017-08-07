@@ -963,13 +963,13 @@ h4 {
     background-color: #070b0d;
 }
 .sponsors-logos .platino li {
-    max-width: 400px;
+    max-width: 370px;
 }
 .sponsors-logos .gold li {
-    max-width: 350px;
+    max-width: 320px;
 }
 .sponsors-logos .silver li {
-    max-width: 300px;
+    max-width: 270px;
 }
 .sponsors-logos .media-partners li {
     max-height: 50px;
@@ -1189,9 +1189,9 @@ h4 {
 }
 /* uncss:ignore */
 .tito-ticket-description {
-    text-align: center;
-    font-size: 18px;
-    padding: 10px 0 30px;
+    text-align: left;
+    font-size: 16px;
+    padding: 0 0 20px;
 }
 /* uncss:ignore */
 .tito-ticket {
