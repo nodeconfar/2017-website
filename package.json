@@ -6,7 +6,9 @@
   "dependencies": {
     "serve": "^5.2.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "surge": "^0.19.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
