@@ -907,21 +907,6 @@ h4 {
 .profile-speaker {
     max-width: 400px;
 }
-.workshop {
-    background: url(../assets/images/speakers/workshop.png);
-}
-.talk {
-    background: url(../assets/images/speakers/talk.png);
-}
-.workshop,
-.talk {
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    width: 70px;
-    height: 70px;
-}
 .back-home {
     background: url(../assets/images/back-home.svg);
     width: 35px;
