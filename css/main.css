@@ -435,6 +435,9 @@ img {
 .white {
 	color: #fff;
 }
+.yellow {
+	color: #f8cf1c;
+}
 .green {
 	color: #adcb2b;
 }
@@ -466,6 +469,9 @@ img {
 .hover-near-black:focus,
 .hover-near-black:hover {
 	color: #1a2024;
+}
+.bg-yellow-80 {
+	background-color: rgba(248, 207, 28, .8);
 }
 .bg-green-80 {
 	background-color: rgba(187, 220, 47, .8);
