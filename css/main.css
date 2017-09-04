@@ -404,6 +404,9 @@ img {
 .w-50 {
 	width: 50%;
 }
+.w-90 {
+	width: 90%;
+}
 .w-100 {
 	width: 100%;
 }
@@ -684,9 +687,6 @@ img {
 	z-index: 999;
 }
 @media screen and (min-width:45em) {
-	.left-2-ns {
-		left: 2rem;
-	}
 	.right-2-ns {
 		right: 2rem;
 	}
@@ -756,9 +756,6 @@ img {
 	.ph5-ns {
 		padding-left: 4rem;
 		padding-right: 4rem;
-	}
-	.ml3-ns {
-		margin-left: 1rem;
 	}
 	.mh2-ns {
 		margin-left: .5rem;
