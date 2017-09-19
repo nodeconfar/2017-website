@@ -146,7 +146,7 @@
     background: #bbdc2f;
 }
 /*! TACHYONS v4.8.1 | http://tachyons.io */
-html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ overflow-x: hidden;}
+html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */  overflow-x: hidden;}
 body { margin: 0; font-family: 'Abel', sans-serif;}
 article, footer, header, section { display: block; }
 a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
@@ -210,6 +210,7 @@ img { max-width: 100%; }
 /* From http://cssfontstack.com */
 /* Sans-Serif Typefaces */
 /* Serif Typefaces */
+.normal { font-weight: normal; }
 /* Height Scale */
 .h2 { height: 2rem; }
 .h3 { height: 4rem; }
@@ -265,8 +266,8 @@ img { max-width: 100%; }
 .bg-light-green { background-color: #bbdc2f; }
 .hover-near-black:hover { color: #1a2024; }
 .hover-near-black:focus { color: #1a2024; }
-.hover-light-green:hover { color: #bbdc2f; }
-.hover-light-green:focus { color: #bbdc2f; }
+.hover-bg-light-gray:hover { background-color: #f1f1f1; }
+.hover-bg-light-gray:focus { background-color: #f1f1f1; }
 .hover-bg-yellow:hover { background-color: #f8cf1c; }
 .hover-bg-yellow:focus { background-color: #f8cf1c; }
 .hover-bg-green:hover { background-color: #adcb2b; }
@@ -293,6 +294,7 @@ img { max-width: 100%; }
 .pv35 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 .pv4 { padding-top: 2rem; padding-bottom: 2rem; }
 .pv5 { padding-top: 4rem; padding-bottom: 4rem; }
+.pv6 { padding-top: 8rem; padding-bottom: 8rem; }
 .ph0 { padding-left: 0; padding-right: 0; }
 .ph1 { padding-left: .25rem; padding-right: .25rem; }
 .ph2 { padding-left: .5rem; padding-right: .5rem; }
@@ -684,7 +686,6 @@ body {
     .profile-speaker {
         width: 100%;
     }
-
 }
 @keyframes fadeIn {
     0% {
@@ -960,9 +961,9 @@ body {
 }
 .date-place {
     position: absolute;
-    top: -70px;
+    top: -75px;
     font-size: 1.2rem;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 .event-card {
     position: relative;
@@ -1009,7 +1010,7 @@ a.event-card:hover {
     height: 60%;
 }
 .event-footer::before {
-    top:-20%;
+    top: -20%;
     height: 60%;
 }
 .time::after {
