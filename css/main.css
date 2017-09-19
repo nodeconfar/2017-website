@@ -146,7 +146,7 @@
     background: #bbdc2f;
 }
 /*! TACHYONS v4.8.1 | http://tachyons.io */
-html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
+html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ overflow-x: hidden;}
 body { margin: 0; font-family: 'Abel', sans-serif;}
 article, footer, header, section { display: block; }
 a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
@@ -265,6 +265,8 @@ img { max-width: 100%; }
 .bg-light-green { background-color: #bbdc2f; }
 .hover-near-black:hover { color: #1a2024; }
 .hover-near-black:focus { color: #1a2024; }
+.hover-light-green:hover { color: #bbdc2f; }
+.hover-light-green:focus { color: #bbdc2f; }
 .hover-bg-yellow:hover { background-color: #f8cf1c; }
 .hover-bg-yellow:focus { background-color: #f8cf1c; }
 .hover-bg-green:hover { background-color: #adcb2b; }
@@ -303,6 +305,7 @@ img { max-width: 100%; }
 .mt1 { margin-top: .25rem; }
 .mt2 { margin-top: .5rem; }
 .mv2 { margin-top: .5rem; margin-bottom: .5rem; }
+.nl4 { margin-left: -2rem; }
 .nt2 { margin-top: -.5rem; }
 .nt3 { margin-top: -1rem; }
 .nt4 { margin-top: -2rem; }
@@ -332,7 +335,7 @@ img { max-width: 100%; }
 .bg-animate, .bg-animate:hover, .bg-animate:focus { transition: background-color .15s ease-in-out; }
 .z-4 { z-index: 4; }
 .z-999 { z-index: 999; }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
  .right-2-ns { right: 2rem; }
  .db-ns { display: block; }
  .flex-ns { display: -ms-flexbox; display: flex; }
@@ -681,6 +684,7 @@ body {
     .profile-speaker {
         width: 100%;
     }
+
 }
 @keyframes fadeIn {
     0% {
@@ -1030,10 +1034,6 @@ a.event-card:hover {
     background: #1a2024;
     color: white;
 }
-.track strong {
-    background: #f8cf1c;
-}
-.track strong,
 .track em {
     padding: 5px 10px;
     font-style: normal;
