@@ -343,6 +343,7 @@ img { max-width: 100%; }
  .db-ns { display: block; }
  .flex-ns { display: -ms-flexbox; display: flex; }
  .flex-row-ns { -ms-flex-direction: row; flex-direction: row; }
+ .justify-start-ns { -ms-flex-pack: start; justify-content: flex-start; }
  .justify-end-ns { -ms-flex-pack: end; justify-content: flex-end; }
  .fl-ns { float: left; display: inline; }
  .fr-ns { float: right; display: inline; }
