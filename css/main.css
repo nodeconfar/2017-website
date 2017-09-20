@@ -237,6 +237,7 @@ img { max-width: 100%; }
 /* Max Width String Properties */
 /* Width Scale */
 .w0 { width: 2px; }
+.w2 { width: 2rem; }
 .w-50 { width: 50%; }
 .w-90 { width: 90%; }
 .w-100 { width: 100%; }
