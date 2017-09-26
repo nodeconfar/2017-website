@@ -543,16 +543,16 @@ body {
     background-color: #070b0d;
 }
 .sponsors-logos .platino li {
-    max-width: 370px;
+    max-width: 360px;
 }
 .sponsors-logos .gold li {
-    max-width: 320px;
+    max-width: 310px;
 }
 .sponsors-logos .silver li {
-    max-width: 270px;
+    max-width: 260px;
 }
 .sponsors-logos .startup li {
-    max-width: 220px;
+    max-width: 210px;
 }
 .sponsors-logos .media-partners li,
 .sponsors-logos .media-partners li img {
