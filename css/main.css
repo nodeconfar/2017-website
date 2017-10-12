@@ -150,8 +150,7 @@ html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-te
 body { margin: 0; font-family: 'Abel', sans-serif;}
 article, footer, header, section { display: block; }
 a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
-strong { font-weight: inherit; }
-strong { font-weight: bolder; }
+strong { font-weight: normal; }
 img { border-style: none; }
 button { font-family: sans-serif; /* 1 */ font-size: 100%; /* 1 */ line-height: 1.15; /* 1 */ margin: 0; /* 2 */ }
 button {/* 1 */ overflow: visible; }
@@ -239,6 +238,7 @@ img { max-width: 100%; }
 .w0 { width: 2px; }
 .w2 { width: 2rem; }
 .w-50 { width: 50%; }
+.w-80 { width: 80%; }
 .w-90 { width: 90%; }
 .w-100 { width: 100%; }
 .overflow-hidden { overflow: hidden; }
@@ -307,6 +307,7 @@ img { max-width: 100%; }
 .mb4 { margin-bottom: 2rem; }
 .mt1 { margin-top: .25rem; }
 .mt2 { margin-top: .5rem; }
+.mt3 { margin-top: 1rem; }
 .mv2 { margin-top: .5rem; margin-bottom: .5rem; }
 .nl3 { margin-left: -1rem; }
 .nl4 { margin-left: -2rem; }
