@@ -379,7 +379,8 @@ img { max-width: 100%; }
 @media screen and (max-width: 45em) {
 	.w-third-m {
 		width: 100%!important;
-	}
+    }
+
 }
 @media screen and (max-width:60em) {
  .dn-m { display: none; }
@@ -389,6 +390,10 @@ img { max-width: 100%; }
 @media screen and (min-width: 60em) {
  .dn-l { display: none; }
  .mh2-l { margin-left: .5rem; margin-right: .5rem; }
+}
+@media screen and (max-width: 320px) { 
+    article .f2-ns {font-size: 1.2rem}
+    article .f4-ns {font-size: 0.8rem}
 }
 * {
     margin: 0;
