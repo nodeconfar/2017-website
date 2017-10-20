@@ -147,9 +147,10 @@
 }
 /*! TACHYONS v4.8.1 | http://tachyons.io */
 html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */  overflow-x: hidden;}
-body { margin: 0; font-family: 'Abel', sans-serif;}
+body { margin: 0; font-family: 'Abel', sans-serif; overflow-x: hidden;}
 article, footer, header, section { display: block; }
 a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
+strong { font-weight: inherit; }
 strong { font-weight: normal; }
 img { border-style: none; }
 button { font-family: sans-serif; /* 1 */ font-size: 100%; /* 1 */ line-height: 1.15; /* 1 */ margin: 0; /* 2 */ }
@@ -179,7 +180,7 @@ img { max-width: 100%; }
 .top-0 { top: 0; }
 .bottom-0 { bottom: 0; }
 .left-0 { left: 0; }
-.bottom-1 { bottom: 1rem; }
+.bottom-2 { bottom: 2rem; }
 .top--1 { top: -1rem; }
 .right--1 { right: -1rem; }
 .bottom--1 { bottom: -1rem; }
@@ -434,10 +435,6 @@ body {
     width: 120px;
     margin: 0 auto;
 }
-.buy .icon-tickets {
-    width: 140px;
-    margin: 0 auto;
-}
 #toggle-menu {
     height: 46px;
 }
@@ -582,21 +579,6 @@ body {
     line-height: 110px;
     text-align: center;
 }
-.hexagon.buy {
-    position: relative;
-    margin: 60px auto;
-    width: 210px;
-    height: 121px;
-    z-index: 1;
-    line-height: 110px;
-    text-align: center;
-}
-.hexagon.buy,
-.hexagon.buy .hexa-out,
-.hexagon.buy .hexa-in {
-    border-left: dashed 1px #1a2024;
-    border-right: dashed 1px #1a2024;
-}
 .hexagon .hexa-out,
 .hexagon .hexa-in {
     position: absolute;
@@ -726,80 +708,40 @@ body {
         clip: rect(19px, 9999px, 30px, 0);
     }
 
-    5% {
-        clip: rect(44px, 9999px, 30px, 0);
-    }
-
     10% {
         clip: rect(8px, 9999px, 24px, 0);
-    }
-
-    15% {
-        clip: rect(61px, 9999px, 91px, 0);
     }
 
     20% {
         clip: rect(18px, 9999px, 39px, 0);
     }
 
-    25% {
-        clip: rect(81px, 9999px, 100px, 0);
-    }
-
     30% {
         clip: rect(92px, 9999px, 23px, 0);
-    }
-
-    35% {
-        clip: rect(6px, 9999px, 62px, 0);
     }
 
     40% {
         clip: rect(9px, 9999px, 75px, 0);
     }
 
-    45% {
-        clip: rect(16px, 9999px, 38px, 0);
-    }
-
     50% {
         clip: rect(52px, 9999px, 92px, 0);
-    }
-
-    55% {
-        clip: rect(64px, 9999px, 38px, 0);
     }
 
     60% {
         clip: rect(79px, 9999px, 68px, 0);
     }
 
-    65% {
-        clip: rect(80, 9999px, 67px, 0);
-    }
-
     70% {
         clip: rect(42px, 9999px, 63px, 0);
-    }
-
-    75% {
-        clip: rect(77px, 9999px, 79px, 0);
     }
 
     80% {
         clip: rect(91px, 9999px, 48px, 0);
     }
 
-    85% {
-        clip: rect(65px, 9999px, 54px, 0);
-    }
-
     90% {
         clip: rect(85px, 9999px, 17px, 0);
-    }
-
-    95% {
-        clip: rect(33px, 9999px, 81px, 0);
     }
 
     100% {
@@ -815,87 +757,47 @@ body {
     width: 100%;
     overflow: hidden;
     clip: rect(0, 900, 0, 0);
-    animation: noise-anim 2s linear infinite alternate-reverse;
+    animation: noise-anim 2s linear infinite;
 }
 @keyframes noise-anim-2 {
     0% {
         clip: rect(40, 9999px, 35px, 0);
     }
 
-    5% {
-        clip: rect(11px, 9999px, 5px, 0);
-    }
-
     10% {
         clip: rect(63px, 9999px, 14px, 0);
-    }
-
-    15% {
-        clip: rect(60, 9999px, 8px, 0);
     }
 
     20% {
         clip: rect(79px, 9999px, 68px, 0);
     }
 
-    25% {
-        clip: rect(4px, 9999px, 52px, 0);
-    }
-
     30% {
         clip: rect(3px, 9999px, 37px, 0);
-    }
-
-    35% {
-        clip: rect(14px, 9999px, 29px, 0);
     }
 
     40% {
         clip: rect(87px, 9999px, 89px, 0);
     }
 
-    45% {
-        clip: rect(13px, 9999px, 37px, 0);
-    }
-
     50% {
         clip: rect(96px, 9999px, 74px, 0);
-    }
-
-    55% {
-        clip: rect(50, 9999px, 4px, 0);
     }
 
     60% {
         clip: rect(32px, 9999px, 4px, 0);
     }
 
-    65% {
-        clip: rect(33px, 9999px, 52px, 0);
-    }
-
     70% {
         clip: rect(68px, 9999px, 25px, 0);
-    }
-
-    75% {
-        clip: rect(44px, 9999px, 83px, 0);
     }
 
     80% {
         clip: rect(88px, 9999px, 32px, 0);
     }
 
-    85% {
-        clip: rect(81px, 9999px, 38px, 0);
-    }
-
     90% {
         clip: rect(48px, 9999px, 39px, 0);
-    }
-
-    95% {
-        clip: rect(19px, 9999px, 94px, 0);
     }
 
     100% {
@@ -911,14 +813,16 @@ body {
     width: 100%;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    animation: noise-anim-2 3s linear infinite alternate-reverse;
+    animation: noise-anim-2 3s linear infinite;
 }
 .btn-scroll-down {
     width: 100px;
     height: 35px;
     margin: auto;
     z-index: 10;
-    transition: display 0.5s easy-in-out;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    display: block;
 }
 .btn-scroll-down::after {
     content: '';
@@ -936,12 +840,6 @@ body {
     height: 25px;
     bottom: 0;
     animation: sc-down-a 0.3s infinite alternate;
-}
-.b-ticket::before {
-    animation: bounce 1s infinite alternate;
-    content: 'get your tickets!';
-    display: block;
-    padding-bottom: 2rem;
 }
 .tabs li {
     transition: background-color 0.2s ease-in-out;
@@ -1086,14 +984,5 @@ a.event-card:hover {
 
     100% {
         transform: translateY(2px) rotate(45deg);
-    }
-}
-@keyframes bounce {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-
-    100% {
-        transform: translateY(2px) scale(1.05);
     }
 }
