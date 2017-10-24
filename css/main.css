@@ -697,6 +697,23 @@ body {
     animation-fill-mode: both;
 }
 /* uncss:ignore */
+
+.bg-glitch-txt {
+  background: url(../assets/images/glitch.gif) no-repeat center 0;
+  background-size: 321px 106px;
+  height: 106px;
+  margin: 0 auto;
+  max-width: 321px;
+}
+.bg-glitch-txt h2 {
+  display: none;
+}
+@media screen and (max-width: 45em) {
+  .bg-glitch-txt {
+    background-size: contain;
+  }
+}
+
 .fadeIn {
     animation-name: fadeIn;
 }
