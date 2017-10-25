@@ -1,7 +1,7 @@
 {
-    "name": "NodeConf Argentina 2017",
+    "name": "NodeConfAr17",
     "short_name": "NodeConfAr17",
-    "description": "Sitio oficial de NodeConf Argentina 2017",
+    "description": "Sitio oficial de NodeConfAr17",
     "start_url": "/?utm_source=homescreen",
     "theme_color": "#f8cf1c",
     "background_color": "#bbdc2f",

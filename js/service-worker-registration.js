@@ -22,6 +22,8 @@ if ('serviceWorker' in navigator) {
   // precaching requests don't degrade the first visit experience.
   // See https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration
   window.addEventListener('load', function() {
+    safariLinks();
+
     // Your service-worker.js *must* be located at the top-level directory relative to your site.
     // It won't be able to control pages unless it's located at the same level or higher than them.
     // *Don't* register service worker file in, e.g., a scripts/ sub-directory!
@@ -59,4 +61,35 @@ if ('serviceWorker' in navigator) {
       console.error('Error during service worker registration:', e);
     });
   });
+}
+
+function safariLinks() {
+  // Mobile Safari in standalone mode
+  if ('standalone' in window.navigator && window.navigator.standalone) {
+      // If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
+      var noddy,
+          remotes = false
+
+      document.addEventListener(
+          'click',
+          function(event) {
+              noddy = event.target
+
+              // Bubble up until we hit link or top HTML element. Warning: BODY element is not compulsory so better to stop on HTML
+              while (noddy.nodeName !== 'A' && noddy.nodeName !== 'HTML') {
+                  noddy = noddy.parentNode
+              }
+
+              if (
+                  'href' in noddy &&
+                  noddy.href.indexOf('http') !== -1 &&
+                  (noddy.href.indexOf(document.location.host) !== -1 || remotes)
+              ) {
+                  event.preventDefault()
+                  document.location.href = noddy.href
+              }
+          },
+          false
+      )
+  }
 }
