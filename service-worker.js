@@ -1,0 +1,268 @@
+/**
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
+// DO NOT EDIT THIS GENERATED OUTPUT DIRECTLY!
+// This file should be overwritten as part of your build process.
+// If you need to extend the behavior of the generated service worker, the best approach is to write
+// additional code and include it using the importScripts option:
+//   https://github.com/GoogleChrome/sw-precache#importscripts-arraystring
+//
+// Alternatively, it's possible to make changes to the underlying template file and then use that as the
+// new base for generating output, via the templateFilePath option:
+//   https://github.com/GoogleChrome/sw-precache#templatefilepath-string
+//
+// If you go that route, make sure that whenever you update your sw-precache dependency, you reconcile any
+// changes made to this original template file with your modified copy.
+
+// This generated service worker JavaScript will precache your site's resources.
+// The code needs to be saved in a .js file at the top-level of your site, and registered
+// from your pages in order to be used. See
+// https://github.com/googlechrome/sw-precache/blob/master/demo/app/js/service-worker-registration.js
+// for an example of how you can register this script and handle various service worker events.
+
+/* eslint-env worker, serviceworker */
+/* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
+'use strict';
+
+var precacheConfig = [["anshul-bhagi.html","4535055bb7aa690ce70ab16749885cd5"],["arunesh-chandra.html","201ef7fa65a8009a45f19654a3ec9597"],["assets/images/after.jpg","5117b21e4e8946ad7e72f46a05cb7c8d"],["assets/images/android-chrome-192x192.png","f2bc61fd8bad5cdde8d2a1a43a707ae5"],["assets/images/android-chrome-512x512.png","bdbfa60a14fa5538afb6f4e3277bfc0b"],["assets/images/apple-icon-114x114.png","3b2d18725078d7b42cbfa7ecb11f9e62"],["assets/images/apple-icon-120x120.png","f599ef42a6f36dcc028a6e5286ccc006"],["assets/images/apple-icon-144x144.png","913f7900d01e6b074a6912705fbf130a"],["assets/images/apple-icon-152x152.png","c56b90a20e63ec8082c0718d695eec55"],["assets/images/apple-icon-180x180.png","9ad9028d5741b4de0c64d52540118be3"],["assets/images/apple-icon-57x57.png","1684f9b1c267ecb02ecde36658c9e1e0"],["assets/images/apple-icon-60x60.png","c34b5afb9a1d7e7b722e44a51d352123"],["assets/images/apple-icon-72x72.png","e56c918327dfd600433effff121d4be9"],["assets/images/apple-icon-76x76.png","3a8870d2b55499efefa612503f629057"],["assets/images/back-home.svg","3e91a53bbb230c243094dccde9d4213e"],["assets/images/checkin.jpg","26f81f1b62b849dffddab6142b9ad702"],["assets/images/ciudad-call.jpg","07d9f8fdf2af317fa5a6653ca2132006"],["assets/images/ciudad.png","4dd539d63e8517c85a182ada7e1d2045"],["assets/images/coffee-break.jpg","816481c042c80b01ab6f9df84d67b83a"],["assets/images/debate.jpg","a2d437414994041beb0a1a2bf4f94044"],["assets/images/favicon.png","886cb269924b86b1b8fab1ef9e339f60"],["assets/images/header.png","a744e8c2699dddc39a0dd7f0e26df254"],["assets/images/ibm.jpg","c7aeb0da63c6e052a2b4f81eedf1249f"],["assets/images/icon-buy.svg","29de8433a4a54d0add3f5c37187085ef"],["assets/images/icon-soldout.svg","90423804cc52b2fd81126e0819e47c9a"],["assets/images/icon-soon-next.svg","cc8571e553b8227bb35bf21a27c584b8"],["assets/images/icon-soon.svg","ac280ceb941b35250c27f46cee096645"],["assets/images/lines-fotos.png","058c2939e4817d015335631b11db77e2"],["assets/images/lines-tickets.png","cf84a54e10ae588101d4917669a528c0"],["assets/images/location.svg","978df4b99c690182b195c4791a0d2451"],["assets/images/logo-cel.svg","f1f7c0a47599a48bd30316eee0043075"],["assets/images/logo-header-nodeconf.png","0bb68e4ec4204e40cc676ca86b683cf8"],["assets/images/logo.svg","f1f7c0a47599a48bd30316eee0043075"],["assets/images/logom-header-nodeconf.png","e3cedd7dbe22c2a56b2c3327ae859d2a"],["assets/images/lunch.jpg","7c2031b0061162ce2d78c8cab16fdde8"],["assets/images/media-academica.png","c9b4a824ec1eacc1f7e9adae1621a248"],["assets/images/media-brasil.png","7e40be1c95a77b4f5d17931e688215dd"],["assets/images/media-ecuestasit.png","950e5dbdaf13dfd15b4ba5423352343d"],["assets/images/media-educacionit.png","c132fc14e6be577bf51cd992847bf1f4"],["assets/images/media-gdgrdlp.png","b62d07933d7b7132f4305c379262f88b"],["assets/images/media-meetupjs.png","bea891f87a376aba15065ab6f05037e0"],["assets/images/media-nerdearla.png","2bf7149bad4aac7bf5a78ae048ac690f"],["assets/images/media-ngbaires.png","537b000b8ecea2c8e49053d9ddc65f11"],["assets/images/media-node.jpg","996df601b99d8da9d15e9388b766d363"],["assets/images/media-nodes.png","d9d68fb50bcbbefbda49dd377f07101c"],["assets/images/media-platajs.png","9f71be9b0fc3adabbeacd74a0745cae4"],["assets/images/mstile-150x150.png","af32fc2310abc9fb0ea255294d65e810"],["assets/images/preloader.gif","867bdc0ab689cb2b0087989d31040239"],["assets/images/profile-ale.jpg","0933f71c7751db9d0c3dbf5b51d8e9df"],["assets/images/profile-camila.jpg","5920544ad5434c6a5d742433e54f70d8"],["assets/images/profile-karen.jpg","7d7d952c59b047a5d703f085a3345e53"],["assets/images/profile-lars.jpg","76b9b31fb60f3ddb2bc5f32e21797fba"],["assets/images/profile-nico.jpg","53c958207525da9bd38b60a401950084"],["assets/images/slider01.jpg","0edaf19cd845cf3fe5fb69bb41ece96e"],["assets/images/slider02.jpg","643bafcd19a63b542f3770946814be71"],["assets/images/slider03.jpg","86e1a36412504ec680328506b28e5dce"],["assets/images/slider04.jpg","79b900d1176af5dfe453cd6c842b2981"],["assets/images/slider05.jpg","879d5bc41deae17fe56ed20d913d5c9c"],["assets/images/slider06.jpg","27931e607290f4733b15361f74ec77c7"],["assets/images/slider07.jpg","27880c3bcb9d16f2a2a531258637c277"],["assets/images/slider08.jpg","f4cf2a9bcab8736314f194cbf2488280"],["assets/images/social/facebook.svg","41e48d3cf270fa702a60f13b4382862e"],["assets/images/social/github.svg","e704844d4a328d51694a542c64eb2b79"],["assets/images/social/twitter-w.svg","a9c640c4d682864e12507df39cadb64c"],["assets/images/social/twitter.svg","58ce7f9f3909b6488d1d402ab859c85a"],["assets/images/social/youtube.svg","ac722a8d50018a9c00c9225e77d77cff"],["assets/images/speakers/anshul.jpg","7490e628cf477903e58d0724d5496f68"],["assets/images/speakers/arunesh.jpg","52bbef0f5077a2bcf8e3a9815669d884"],["assets/images/speakers/athan.jpg","8a5660e59fad08e23d2c731cc8a5075b"],["assets/images/speakers/bert.jpg","0227f56005d1588da92922392f857b1c"],["assets/images/speakers/bynens.jpg","c78634543158b78a155d91585aa5e574"],["assets/images/speakers/claudia.jpg","bd7617a93f3d4b9b9ede0f3325ed0f8e"],["assets/images/speakers/duque.jpg","dc7737ccee2f07d8e34968effb9b1a5c"],["assets/images/speakers/felipe.jpg","4d8b42ec45d15a82854346d75aca55d3"],["assets/images/speakers/flyer-anshul.jpg","553b8a6493eadb5fad4475679cc03e75"],["assets/images/speakers/flyer-arunesh.jpg","a54d9e4499cfca8fb41a27bfd1514479"],["assets/images/speakers/flyer-athan.jpg","04bcd1bbfb7e87b8e16e18ed3dd56bd4"],["assets/images/speakers/flyer-bert.jpg","c0655a86b93d034109f3cb18d4fd25e1"],["assets/images/speakers/flyer-bynens.jpg","c8e29e2d50196f1c227a929b7766ead6"],["assets/images/speakers/flyer-claudia.jpg","a03526315c2796e90ffa7d0e0b8eb2d5"],["assets/images/speakers/flyer-duque.jpg","6f44d32812df5f87415e90cc928bd72f"],["assets/images/speakers/flyer-felipe.jpg","f549e1e126e2628bc0aaf3388d30ffcc"],["assets/images/speakers/flyer-garrett.jpg","e04201a6d6204ee7c0917a536215164f"],["assets/images/speakers/flyer-gimenez.jpg","9c8bfe5996eab5120d06517304a82029"],["assets/images/speakers/flyer-hunter.jpg","e2594275bd2e33bd6a4e5dbd74c71a43"],["assets/images/speakers/flyer-kat.jpg","81443f2bba07af4aa0891884bb59f371"],["assets/images/speakers/flyer-khan.jpg","3044184c0954f9a4a63f2884a1868f7e"],["assets/images/speakers/flyer-lembeck.jpg","a0f7b2dca49b26f80d306262a097a53e"],["assets/images/speakers/flyer-lenny.jpg","1e48c6f8fed06a8213263b38d38ff12f"],["assets/images/speakers/flyer-mckelvey.jpg","3daeabac529426c73a85129c9d0d0884"],["assets/images/speakers/flyer-nikhila.jpg","42fdf96bafdc3e8fe61708cb12436e2c"],["assets/images/speakers/flyer-paz.jpg","b81ea49139fccad413cd1b26ac4d71b5"],["assets/images/speakers/flyer-perch.jpg","fb62b04c64643c895c2787663c6ab064"],["assets/images/speakers/flyer-ravi.jpg","be43f9255ecaca2bc71e9e3cd91e9a2d"],["assets/images/speakers/flyer-vazquez.jpg","6f16a5a51d067c371c3c0b5b62eda87a"],["assets/images/speakers/flyer-w-block.jpg","45e1d1c05c6f62a614ece773f1f68429"],["assets/images/speakers/flyer-w-bort.jpg","ddf786f5b27fdd188e089f553e14e0ff"],["assets/images/speakers/flyer-w-felman.jpg","084fa39f3443406226278cfcc0db2636"],["assets/images/speakers/flyer-w-jcano.jpg","5b990bbe9a14bccaf0b28cb49b6bd21e"],["assets/images/speakers/flyer-w-lpitelli.jpg","40488f305f677fe5a16325bcd8e5ee66"],["assets/images/speakers/flyer-w-marcos.jpg","33eae180555704404baf694c50cc27d9"],["assets/images/speakers/flyer-w-milian.jpg","a7bc86c77f1c36d8b9a719ef4a180e84"],["assets/images/speakers/flyer-w-walter.jpg","e6550597aa08f6dd5bd389b6b828cf12"],["assets/images/speakers/flyer-yamil.jpg","50419459cbafdb55d8c5dd8f21aabbf6"],["assets/images/speakers/garrett.jpg","49547852d19ee26b69d0971d2cd3fb5a"],["assets/images/speakers/gimenez.jpg","572fb7155208514b9902c376bd5724df"],["assets/images/speakers/hunter.jpg","212bf5e31f2dc09387ce1cd99fe3cbd0"],["assets/images/speakers/kat.jpg","122e91f5cbaee0e9a046df26bf6ac6aa"],["assets/images/speakers/khan.jpg","3e23fe47c0e860c05fc1c95c4c5dcb96"],["assets/images/speakers/lembeck.jpg","95185e0d64828b3a21d50622350be460"],["assets/images/speakers/lenny.jpg","be1ff02d5ede90b7e0cb628989383969"],["assets/images/speakers/mckelvey.jpg","19eda7b8d03569a1938df4886610f658"],["assets/images/speakers/misc1.png","02efba81ff394315b9f9dc6bbc714f6f"],["assets/images/speakers/nikhila.jpg","ef26ff2b8820a5736e256546b8bde010"],["assets/images/speakers/paz.jpg","ef42223b40cce5b9602710520a390b9b"],["assets/images/speakers/perch.jpg","6ada9acb9bfab835f396c3b77774af13"],["assets/images/speakers/profile-w.png","73f740ae41a34a084cf9c516d6ddc199"],["assets/images/speakers/profile.png","50a5fad5ce54698fa1f53d1385504ca5"],["assets/images/speakers/ravi.jpg","f109a03847aa292f09931dc0e1882d22"],["assets/images/speakers/soon.png","d64c7cbca6564b4ecbab0531c0c42953"],["assets/images/speakers/vazquez.jpg","f38777273c03b1c853a881bb9ad7ffec"],["assets/images/speakers/w-block.jpg","f842f7b8bdce91e102c8f9bc9d3435db"],["assets/images/speakers/w-bort.jpg","db63a60c09c4cff107dae4a8de178388"],["assets/images/speakers/w-felman.jpg","d9c831cf7e393a2ee2d0265fc63a93cf"],["assets/images/speakers/w-jcano.jpg","47c81f6aa5654ada3b32888054df4a99"],["assets/images/speakers/w-lpitelli.jpg","4febb3bfdfba52263e22a28ff89f7901"],["assets/images/speakers/w-marcos.jpg","635d969bcb3ce941e05a2fc54f532953"],["assets/images/speakers/w-milian.jpg","31a9800151bed5e8d17a919f47a548b9"],["assets/images/speakers/w-walter.jpg","09369f8348e89450f26d74c75fb30529"],["assets/images/speakers/yamil.jpg","9221a0cd5328bd4ae549cff73aaa8d7d"],["assets/images/sponsor-ag2.png","6f7141baaa2d5d9bb102defac34a7aad"],["assets/images/sponsor-almundo.png","7697791fef2d75d08451c130d5bf6bec"],["assets/images/sponsor-auth0.png","a8e49c6b5efc4727540c97468e90c149"],["assets/images/sponsor-axiomzen.png","15ffd11d231067c4b2c8b5909e80c3ec"],["assets/images/sponsor-belatrix.png","725378048620da5ad7130bb9abe0d52e"],["assets/images/sponsor-cloud.png","6e2aca11c85fa5f587ad74a2b07f2f57"],["assets/images/sponsor-elementum.png","4bdc7bfcbd56b86cec198cae5c2917a8"],["assets/images/sponsor-globant.png","671cd7ec770be748b622f1eae1a2de8d"],["assets/images/sponsor-google.png","d66ae072382914ed66e671d5bfaa3f6f"],["assets/images/sponsor-ibm.png","389d03c26d8a6ff0553537002274714f"],["assets/images/sponsor-matr.png","bdab795e664ad01024bc3f28450be011"],["assets/images/sponsor-medallia.png","105b14b2c492fdd7a70ab55d971c3d2d"],["assets/images/sponsor-mercadolibre.png","1d191da91b7731f98a7356e26fa83883"],["assets/images/sponsor-microsoft.png","99ae1f917bfb5679c42f978f17197264"],["assets/images/sponsor-mulesoft.png","c3837b9a91067506d822cf2632256fc2"],["assets/images/sponsor-nodesource.png","d6fec6d479f864c6d0f0939ad03c60ef"],["assets/images/sponsor-npm.png","17cd66c74670ff8febd4e3ae32214be3"],["assets/images/sponsor-pager.png","9aa28db715d69a842b83bcc712a1a594"],["assets/images/sponsor-shiftgig.png","16813ac8ae6192963fe4fccdae3635f0"],["assets/images/sponsor-toptal.png","8138493ec1ce35a6d6973f1eb379f96e"],["assets/images/sponsor-up.png","f30739fb7fd74ff1263dd8195f446d85"],["assets/images/sponsor-w3.png","739857a600a6cb3d690708633fbc89db"],["assets/images/sponsor-wolox.png","146b130a532231fd22656c0902cc15f3"],["athan-reines.html","65a3809300e66fa6a2794c7211df6ad4"],["bert-spaan.html","e204c4e0ef2dcbacc2f98496451157fe"],["bonnie-milian.html","82785d43705441372a88eeae853f577c"],["cfp.html","4c89a398663ca15e644adacb6417ed60"],["claudia-hernandez.html","d5c137b553e18f6d9afc86739149b040"],["code-of-conduct.html","8bdcb0746dae04862c4a88c742f55c4d"],["conduct.html","af30c644f2e094d62d2f6a3c816ebb9a"],["css/main.css","bce072f8758c891a643771e922c50720"],["daniel-gimenez.html","9d16df2e64d384bf67de1b5609fbede3"],["daniel-khan.html","c03242b4efe616cd9d47946405352273"],["data.json","8708c217437bf90bb64882dbaccaa944"],["data1.json","7091cec464c319ba0fc0f1df79e7cebf"],["favicon-16x16.png","6fbb2331256db9db12a76c9ab3be8088"],["favicon-32x32.png","ad8f64fab354795dd95c90cbc7827fc1"],["favicon.ico","b0e6629af1be217b9950dbf9644424b9"],["felipe-torres.html","ae50e8313c4f944c761ca0016aa22e4f"],["gerardo-bort.html","0ed7f6c9d9950a41aa2e77a868c651b5"],["glenn-block.html","81b2ec4a952caa8887d9e2abf778e168"],["guillermo-paz.html","36984c5ed189294f3c340a773a61170b"],["index.html","b5866abe519fa727c525ce06f5062904"],["jeff-lembeck.html","332785db14d73fb60d6dcd4977a8d4c5"],["jorge-cano.html","26777524f2a942d0082dc4650b9db5ed"],["js/bundle.js","0e8b38fcc8255143b625e03793311efe"],["js/service-worker-registration.js","82bc37f8a40d44324ad39e4aca60c641"],["js/tabs.js","9408203809e4c891373dbc06d1f69b3f"],["julian-duque.html","eed5d3ec845166523ddfda5445a9865a"],["karissa-mckelvey.html","08906942750aa6045b41c618b85628f2"],["kat-marchan.html","95c1859f7625980211f7ad1859bb9c9f"],["leonardo-crespo.html","bfef43aab1c5359ceec0b631bb3a0210"],["leonardo-pitelli.html","37f634b8a77f621c98709a0d7093d270"],["manifest.json","993fb56f914455e0624e7676e233928a"],["marcelo-felman.html","9af29eeb4add45eae01072b4850ef199"],["marcos-tomatti.html","731faf2e99f34d75c52225212626edec"],["mariano-vazquez.html","603df146af46d915eb3e09f97adc6ad6"],["mathias-bynens.html","017a79a99ea9aa54bf49c1bc42612b7c"],["michelle-garrett.html","e16056f94ea63a23cea07eb5f95df660"],["nikhila-ravi.html","5bdba4c671777bd585aa78db23e2c8a1"],["package.json","563448d509efeb0c9e3c9140eb4cc9fa"],["perch.html","abbab0801d10b38032da4fad82d4a922"],["ravi-kolli.html","4c010643d2335f384c6dbb464ec5ce97"],["schedule.html","3ea84f6be5724d58acbc2a0470f792bb"],["thomas-hunter.html","c6b47b92cd6f179fc17d63dc19c88429"],["tickets.html","31c59e852dee44367ac267c44522e298"],["walter-riveros.html","a840eabb15e0469c7037100b177ae412"],["yamil-asusta.html","b8261cd9c0566eafb325b58ec76eff87"]];
+var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
+
+
+var ignoreUrlParametersMatching = [/^utm_/];
+
+
+
+var addDirectoryIndex = function (originalUrl, index) {
+    var url = new URL(originalUrl);
+    if (url.pathname.slice(-1) === '/') {
+      url.pathname += index;
+    }
+    return url.toString();
+  };
+
+var cleanResponse = function (originalResponse) {
+    // If this is not a redirected response, then we don't have to do anything.
+    if (!originalResponse.redirected) {
+      return Promise.resolve(originalResponse);
+    }
+
+    // Firefox 50 and below doesn't support the Response.body stream, so we may
+    // need to read the entire body to memory as a Blob.
+    var bodyPromise = 'body' in originalResponse ?
+      Promise.resolve(originalResponse.body) :
+      originalResponse.blob();
+
+    return bodyPromise.then(function(body) {
+      // new Response() is happy when passed either a stream or a Blob.
+      return new Response(body, {
+        headers: originalResponse.headers,
+        status: originalResponse.status,
+        statusText: originalResponse.statusText
+      });
+    });
+  };
+
+var createCacheKey = function (originalUrl, paramName, paramValue,
+                           dontCacheBustUrlsMatching) {
+    // Create a new URL object to avoid modifying originalUrl.
+    var url = new URL(originalUrl);
+
+    // If dontCacheBustUrlsMatching is not set, or if we don't have a match,
+    // then add in the extra cache-busting URL parameter.
+    if (!dontCacheBustUrlsMatching ||
+        !(url.pathname.match(dontCacheBustUrlsMatching))) {
+      url.search += (url.search ? '&' : '') +
+        encodeURIComponent(paramName) + '=' + encodeURIComponent(paramValue);
+    }
+
+    return url.toString();
+  };
+
+var isPathWhitelisted = function (whitelist, absoluteUrlString) {
+    // If the whitelist is empty, then consider all URLs to be whitelisted.
+    if (whitelist.length === 0) {
+      return true;
+    }
+
+    // Otherwise compare each path regex to the path of the URL passed in.
+    var path = (new URL(absoluteUrlString)).pathname;
+    return whitelist.some(function(whitelistedPathRegex) {
+      return path.match(whitelistedPathRegex);
+    });
+  };
+
+var stripIgnoredUrlParameters = function (originalUrl,
+    ignoreUrlParametersMatching) {
+    var url = new URL(originalUrl);
+    // Remove the hash; see https://github.com/GoogleChrome/sw-precache/issues/290
+    url.hash = '';
+
+    url.search = url.search.slice(1) // Exclude initial '?'
+      .split('&') // Split into an array of 'key=value' strings
+      .map(function(kv) {
+        return kv.split('='); // Split each 'key=value' string into a [key, value] array
+      })
+      .filter(function(kv) {
+        return ignoreUrlParametersMatching.every(function(ignoredRegex) {
+          return !ignoredRegex.test(kv[0]); // Return true iff the key doesn't match any of the regexes.
+        });
+      })
+      .map(function(kv) {
+        return kv.join('='); // Join each [key, value] array into a 'key=value' string
+      })
+      .join('&'); // Join the array of 'key=value' strings into a string with '&' in between each
+
+    return url.toString();
+  };
+
+
+var hashParamName = '_sw-precache';
+var urlsToCacheKeys = new Map(
+  precacheConfig.map(function(item) {
+    var relativeUrl = item[0];
+    var hash = item[1];
+    var absoluteUrl = new URL(relativeUrl, self.location);
+    var cacheKey = createCacheKey(absoluteUrl, hashParamName, hash, false);
+    return [absoluteUrl.toString(), cacheKey];
+  })
+);
+
+function setOfCachedUrls(cache) {
+  return cache.keys().then(function(requests) {
+    return requests.map(function(request) {
+      return request.url;
+    });
+  }).then(function(urls) {
+    return new Set(urls);
+  });
+}
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      return setOfCachedUrls(cache).then(function(cachedUrls) {
+        return Promise.all(
+          Array.from(urlsToCacheKeys.values()).map(function(cacheKey) {
+            // If we don't have a key matching url in the cache already, add it.
+            if (!cachedUrls.has(cacheKey)) {
+              var request = new Request(cacheKey, {credentials: 'same-origin'});
+              return fetch(request).then(function(response) {
+                // Bail out of installation unless we get back a 200 OK for
+                // every request.
+                if (!response.ok) {
+                  throw new Error('Request for ' + cacheKey + ' returned a ' +
+                    'response with status ' + response.status);
+                }
+
+                return cleanResponse(response).then(function(responseToCache) {
+                  return cache.put(cacheKey, responseToCache);
+                });
+              });
+            }
+          })
+        );
+      });
+    }).then(function() {
+      
+      // Force the SW to transition from installing -> active state
+      return self.skipWaiting();
+      
+    })
+  );
+});
+
+self.addEventListener('activate', function(event) {
+  var setOfExpectedUrls = new Set(urlsToCacheKeys.values());
+
+  event.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      return cache.keys().then(function(existingRequests) {
+        return Promise.all(
+          existingRequests.map(function(existingRequest) {
+            if (!setOfExpectedUrls.has(existingRequest.url)) {
+              return cache.delete(existingRequest);
+            }
+          })
+        );
+      });
+    }).then(function() {
+      
+      return self.clients.claim();
+      
+    })
+  );
+});
+
+
+self.addEventListener('fetch', function(event) {
+  if (event.request.method === 'GET') {
+    // Should we call event.respondWith() inside this fetch event handler?
+    // This needs to be determined synchronously, which will give other fetch
+    // handlers a chance to handle the request if need be.
+    var shouldRespond;
+
+    // First, remove all the ignored parameters and hash fragment, and see if we
+    // have that URL in our cache. If so, great! shouldRespond will be true.
+    var url = stripIgnoredUrlParameters(event.request.url, ignoreUrlParametersMatching);
+    shouldRespond = urlsToCacheKeys.has(url);
+
+    // If shouldRespond is false, check again, this time with 'index.html'
+    // (or whatever the directoryIndex option is set to) at the end.
+    var directoryIndex = 'index.html';
+    if (!shouldRespond && directoryIndex) {
+      url = addDirectoryIndex(url, directoryIndex);
+      shouldRespond = urlsToCacheKeys.has(url);
+    }
+
+    // If shouldRespond is still false, check to see if this is a navigation
+    // request, and if so, whether the URL matches navigateFallbackWhitelist.
+    var navigateFallback = '';
+    if (!shouldRespond &&
+        navigateFallback &&
+        (event.request.mode === 'navigate') &&
+        isPathWhitelisted([], event.request.url)) {
+      url = new URL(navigateFallback, self.location).toString();
+      shouldRespond = urlsToCacheKeys.has(url);
+    }
+
+    // If shouldRespond was set to true at any point, then call
+    // event.respondWith(), using the appropriate cache key.
+    if (shouldRespond) {
+      event.respondWith(
+        caches.open(cacheName).then(function(cache) {
+          return cache.match(urlsToCacheKeys.get(url)).then(function(response) {
+            if (response) {
+              return response;
+            }
+            throw Error('The cached response that was expected is missing.');
+          });
+        }).catch(function(e) {
+          // Fall back to just fetch()ing the request if some unexpected error
+          // prevented the cached response from being valid.
+          console.warn('Couldn\'t serve response for "%s" from cache: %O', event.request.url, e);
+          return fetch(event.request);
+        })
+      );
+    }
+  }
+});
+
+
+
+
+
+
+
