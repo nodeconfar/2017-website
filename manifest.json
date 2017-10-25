@@ -1,5 +1,12 @@
 {
-    "name": "NodeConfAr17",
+    "name": "NodeConf Argentina 2017",
+    "short_name": "NodeConfAr17",
+    "description": "Sitio oficial de NodeConf Argentina 2017",
+    "start_url": "/?utm_source=homescreen",
+    "theme_color": "#f8cf1c",
+    "background_color": "#bbdc2f",
+    "orientation": "portrait",
+    "display": "standalone",
     "icons": [
         {
             "src": "assets/images/android-chrome-192x192.png",
@@ -11,9 +18,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "short_name": "NodeConfAr17",
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    ]
 }
