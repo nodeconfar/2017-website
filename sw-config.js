@@ -2,9 +2,11 @@
 module.exports = {
   staticFileGlobs: [
     'css/**.css',
-    './**/**.html',
-    'assets/**/**.jpg',
-    'assets/**/**.png',
-    'js/**.js'
+    'js/**.js',
+    'assets/**/*.*',
+    './*.ico',
+    './*.json',
+    './*.html',
+    './*.png'
   ]
 }
