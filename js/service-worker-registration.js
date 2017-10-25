@@ -22,8 +22,6 @@ if ('serviceWorker' in navigator) {
   // precaching requests don't degrade the first visit experience.
   // See https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration
   window.addEventListener('load', function() {
-    safariLinks();
-
     // Your service-worker.js *must* be located at the top-level directory relative to your site.
     // It won't be able to control pages unless it's located at the same level or higher than them.
     // *Don't* register service worker file in, e.g., a scripts/ sub-directory!
@@ -68,7 +66,7 @@ function safariLinks() {
   if ('standalone' in window.navigator && window.navigator.standalone) {
       // If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
       var noddy,
-          remotes = false
+          remotes = true
 
       document.addEventListener(
           'click',
@@ -93,3 +91,5 @@ function safariLinks() {
       )
   }
 }
+
+safariLinks();
